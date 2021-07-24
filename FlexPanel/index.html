@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Bit Pigture</title>
+</head>
+<style>
+  body {
+    background: #c0f1e0;
+    margin: 0;
+    padding: 0;
+    position: relative;
+    font-family: Roboto, sans-serif;
+  }
+
+  .title {
+    text-align: center;
+    padding: 0;
+    margin: 0;
+    font-size: 4.0rem;
+    -webkit-text-stroke: rgb(94, 94, 94) 3px;
+    color: transparent;
+  }
+
+  .container {
+    max-width: 1600px;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    margin: 0 auto;
+    display: flex;
+  }
+
+  .link {
+    flex: 1;
+    margin: 5px 5px;
+    box-shadow: 0 0 6px 0px rgba(0, 0, 0, 0.5);
+    border-radius: 4px;
+
+    transition: all .5s cubic-bezier(0.075, 0.82, 0.165, 1);
+  }
+
+  .img {
+    width: 100%;
+    height: 500px;
+    object-fit: cover;
+    border-radius: 4px;
+    vertical-align: top;
+  }
+
+  .link-active {
+    flex: 4;
+  }
+</style>
+
+<body>
+
+  <h2 class="title">Just Click</h2>
+
+  <div class="container">
+    <a href="#" class="link" id="link">
+      <img class="img"
+        src="https://images.pexels.com/photos/8817871/pexels-photo-8817871.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260"
+        alt="">
+    </a>
+    <a href="#" class="link" id="link">
+      <img class="img"
+        src="https://images.pexels.com/photos/3408744/pexels-photo-3408744.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260"
+        alt="">
+    </a>
+    <a href="#" class="link" id="link">
+      <img class="img"
+        src="https://images.pexels.com/photos/15286/pexels-photo.jpg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260"
+        alt="">
+    </a>
+    <a href="#" class="link" id="link">
+      <img class="img"
+        src="https://images.pexels.com/photos/2922672/pexels-photo-2922672.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260"
+        alt="">
+    </a>
+  </div>
+
+  <script>
+    const links = document.querySelectorAll('.link');
+
+    links.forEach(link => link.addEventListener('click', (e) => {
+      e.preventDefault();
+
+
+      if (link.classList.contains('link-active')) {
+        link.classList.remove('link-active');
+      } else {
+        links.forEach(child => {
+          child.classList.remove('link-active');
+        });
+        link.classList.add('link-active');
+      }
+
+
+    }));
+  </script>
+</body>
+
+</html>
