@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>StopWatch</title>
+</head>
+
+<body>
+  <style>
+    .container {
+      background-image: url('https://images.unsplash.com/photo-1599981819329-31f250c3bc75?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1050&q=80');
+      background-repeat: no-repeat;
+      background-size: cover;
+      background-position: center center;
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      left: 0;
+      top: 0;
+
+    }
+
+    .btn {
+      padding: 20px 40px;
+      font-size: 18px;
+      margin-top: 50px;
+      margin-left: 15px;
+      margin-right: 15px;
+      border: none;
+      outline: transparent;
+      color: #fff;
+      text-transform: uppercase;
+      border-radius: 4px;
+      cursor: pointer;
+    }
+
+    .btn:hover {
+      box-shadow: 0 0 20px 2px rgba(0, 0, 0, 0.9);
+    }
+
+    .btn:active {
+      transform: translate(2px, 2px) scale(0.95);
+    }
+
+    .btn-reset {
+      background: rgb(105, 84, 84);
+    }
+
+    .btn-reset:hover {
+      background: rgb(190, 154, 154);
+    }
+
+    .btn-green {
+      background: green;
+    }
+
+    .btn-green:hover {
+      background: rgb(0, 43, 0);
+    }
+
+    .btn-red {
+      background: red;
+    }
+
+    .btn-red:hover {
+      background: rgb(95, 1, 1);
+    }
+
+    .stopwatch {
+      position: absolute;
+      top: 50%;
+      transform: translate(-50%, -50%);
+      left: 50%;
+      width: 70%;
+      height: 70%;
+      background: rgba(0, 0, 0, 0.9);
+      border-radius: 20px;
+      color: #fff;
+
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      font-size: 72px;
+      font-family: Roboto;
+    }
+
+    .stopwatch-timer {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .stopwath__minutes {
+      margin-right: 10px;
+      letter-spacing: 5px;
+    }
+
+    .stopwath__minutes+span {
+      margin-right: 10px;
+    }
+
+    .stopwath__seconds {
+      letter-spacing: 5px;
+    }
+  </style>
+
+  <div class="container">
+    <div class="stopwatch">
+      <div class="stopwatch-timer">
+        <div class="stopwath__minutes" id="minutes">00</div>
+        <span>:</span>
+        <div class="stopwath__seconds" id="seconds">00</div>
+      </div>
+      <div class="stopwatch__butons">
+        <button class="btn btn-green" data-timer='start'>Start</button>
+        <button class="btn btn-red" data-timer='stop'> Stop</button>
+      </div>
+      <button class="btn-reset btn" data-timer='reset'>Reset</button>
+    </div>
+  </div>
+
+  <script>
+    const startBtn = document.querySelector("[data-timer='start']");
+    const stopBtn = document.querySelector("[data-timer='stop']");
+    const resetBtn = document.querySelector("[data-timer='reset']");
+    const minutes = document.getElementById('minutes');
+    const seconds = document.getElementById('seconds');
+    let isRunning = false;
+    let timerTime = 57;
+    let intervalStart;
+
+    function interval() {
+      timerTime++;
+      console.log(timerTime);
+      const numOfMinutes = Math.floor(timerTime / 60);
+      const numOfSeconds = Math.floor(timerTime % 60);
+      (numOfSeconds < 10) ? seconds.innerText = "0" + numOfSeconds : seconds.innerText = numOfSeconds;
+      (numOfMinutes < 10) ? minutes.innerText = "0" + numOfMinutes : minutes.innerText = numOfMinutes;
+
+    }
+
+    function startTimer() {
+      if(isRunning) return;
+      intervalStart = setInterval(interval, 1000);
+      isRunning = true;
+    }
+    
+    function stopTimer() {
+      if(!isRunning) return;
+      clearInterval(intervalStart);
+      isRunning = false;
+    }
+
+    function resetTimer() {
+      clearInterval(intervalStart);
+      timerTime = 00;
+      seconds.innerText = "00"
+      minutes.innerText = "00"
+    }
+
+
+
+    startBtn.addEventListener('click', startTimer);
+    stopBtn.addEventListener('click', stopTimer);
+    resetBtn.addEventListener('click', resetTimer);
+    
+  </script>
+
+</body>
+
+</html>
