@@ -154,14 +154,25 @@
   <script>
     const accordionLi = document.querySelectorAll('.accordion__li');
     const accordionQuest = document.querySelectorAll('.accordion__quest');
+
+
     accordionQuest.forEach(item => {
       item.addEventListener('click', () => {
-        
         const thisItem = item.parentNode;
+        
+        if(thisItem.classList.contains('accordion__li--active')){
+          thisItem.classList.remove('accordion__li--active');
+        } else {
+          accordionLi.forEach(item => {
+            item.classList.remove('accordion__li--active');
+          });
+          thisItem.classList.add('accordion__li--active');
+        }
 
-        thisItem.classList.toggle('accordion__li--active')
       });
     })
+
+
   </script>
 </body>
 
