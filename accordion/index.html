@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Accordion</title>
+</head>
+
+<body>
+  <style>
+    html {
+      font-size: 10px;
+      font-family: Roboto, sans-serif;
+    }
+
+    body {
+      background: #efefef;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      min-height: 100vh;
+    }
+
+    .accordian__nav {
+      display: inline-block;
+      background: #fff;
+      padding: 30px;
+      border-radius: 20px;
+      max-width: 1200px;
+    }
+
+    .accordion__ul {
+      list-style-type: none;
+      margin: 0;
+      padding: 0;
+    }
+
+    .accordion__li {
+      margin-bottom: 40px;
+    }
+
+    .accordion__quest {
+      font-size: 3.5rem;
+      font-weight: 700;
+      display: flex;
+      align-items: center;
+      position: relative;
+      margin-bottom: 20px;
+      cursor: pointer;
+      padding-bottom: 10px;
+      padding-top: 10px;
+      background: #000;
+      color: #fff;
+      padding-left: 30px;
+      border-radius: 20px;
+    }
+
+    .accordion__arrow {
+      background: transparent;
+      border: none;
+      font-size: 4rem;
+      position: absolute;
+      right: 20px;
+      top: 50%;
+      transform: translateY(-50%);
+      z-index: 2;
+      color: #fff;
+
+      transition: all .5s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    }
+
+    .accordion__answer {
+      font-size: 3rem;
+      font-weight: 400;
+      
+      opacity: 0;
+      height: 0;
+      visibility: hidden;
+
+      overflow: hidden;
+      margin-left: 10px;
+      transition: all .5s ease;
+    }
+    .accordion__li--active .accordion__arrow {
+      transform: rotate(180deg) translateY(50%);
+    }
+    .accordion__li--active .accordion__answer{
+      opacity: 1;
+      height: auto;
+      visibility: visible;
+    }
+
+
+    @media (hover: hover){
+      .accordion__quest:hover{
+        box-shadow: 0 0 20px 2px rgba(0, 0, 0, 0.7), 
+                    inset 0 0 20px 2px rgba(0, 0, 0, 0.3);
+        background: #efefef;
+        color: #222;
+      }
+      .accordion__quest:hover .accordion__arrow{
+        color: #222;
+      }
+
+      .accordion__quest:active{
+        transform: translate(1px, 1px) scale(0.98);
+      }
+    }
+  </style>
+
+  <div class="container">
+
+    <div class="accordion">
+      <nav class="accordian__nav">
+        <ul class="accordion__ul">
+          <li class="accordion__li">
+            <div class="accordion__quest">
+              How to learn English?
+              <button class="accordion__arrow">▼</button>
+            </div>
+            <div class="accordion__answer">
+              I don't know. Lorem ipsum dolor sit amet consectetur adipisicing elit. Autem, saepe.
+            </div>
+          </li>
+          <li class="accordion__li">
+            <div class="accordion__quest">
+              Let's goooo.
+              <button class="accordion__arrow">▼</button>
+            </div>
+            <div class="accordion__answer">
+              Lorem ipsum dolor sit amet consectetur adipisicing elit. Autem, saepe. Lorem ipsum dolor, sit amet
+              consectetur adipisicing elit. Porro aliquam, neque mollitia ullam quibusdam at sit veritatis laboriosam
+              doloribus quasi.
+            </div>
+          </li>
+          <li class="accordion__li">
+            <div class="accordion__quest">
+              Where are you from?
+              <button class="accordion__arrow">▼</button>
+            </div>
+            <div class="accordion__answer">
+              Lorem ipsum dolor sit amet consectetur adipisicing elit. Autem, saepe. Lorem ipsum dolor sit amet
+              consectetur adipisicing elit. Enim, asperiores.
+            </div>
+          </li>
+        </ul>
+      </nav>
+    </div>
+
+  </div>
+
+  <script>
+    const accordionLi = document.querySelectorAll('.accordion__li');
+    const accordionQuest = document.querySelectorAll('.accordion__quest');
+    accordionQuest.forEach(item => {
+      item.addEventListener('click', () => {
+        
+        const thisItem = item.parentNode;
+
+        thisItem.classList.toggle('accordion__li--active')
+      });
+    })
+  </script>
+</body>
+
+</html>
