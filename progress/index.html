@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>ScrollProgress</title>
+</head>
+
+<body>
+  <style>
+    body{
+      background: #efefef;
+    }
+    .scroll-line {
+      position: fixed;
+      top: 0%;
+      left: 0%;
+      height: 5px;
+      background: #000;
+
+    }
+
+    .container {
+      padding: 30px;
+      max-width: 1200px;
+      margin: 0 auto;
+      background: #fff;
+      border-radius: 20px;
+      box-shadow: 0 0 20px 2px rgba(0, 0, 0, 0.5);
+      min-height: 5000px;
+    }
+  </style>
+  <div class="scroll-line"></div>
+  <div class="container">
+    Lorem ipsum dolor sit amet consectetur, adipisicing elit. Quam ut vitae placeat voluptatibus nisi laborum error?
+    Facilis adipisci architecto sunt dolorem earum velit numquam alias at error omnis iusto, veniam reiciendis aut,
+    perspiciatis sit saepe eius veritatis ad assumenda. In voluptates corrupti, modi soluta molestiae vel ab quaerat
+    quae aspernatur corporis ea numquam. Nihil praesentium quisquam consequatur tenetur nobis quo optio illo recusandae
+    dolorum atque. Cum distinctio vero soluta ullam corporis cumque laborum doloribus sapiente dolore consequuntur.
+    Nulla quod animi adipisci, libero modi quam incidunt ex corporis, autem ratione reprehenderit alias minus expedita
+    praesentium molestiae exercitationem optio ducimus sapiente aperiam neque. Labore, unde ullam rerum ipsam voluptates
+    sapiente odio voluptate quisquam mollitia obcaecati cum, blanditiis perspiciatis velit neque! Odio voluptatem,
+    ratione cupiditate porro repellendus hic harum mollitia iusto in distinctio a necessitatibus unde alias. Earum rerum
+    quia hic culpa ipsa optio, adipisci cum aspernatur mollitia fuga. Incidunt, facere asperiores repellat vero optio
+    ipsa sequi velit. Assumenda culpa impedit illo aliquam id soluta unde exercitationem tempora eum est explicabo sit,
+    obcaecati commodi perspiciatis quibusdam quo consequuntur vel temporibus consectetur placeat accusamus atque
+    excepturi eos sunt? Neque dolor minima adipisci ea blanditiis aliquam dolorum ab natus iusto iure? Porro,
+    consequuntur tempora! Doloribus, exercitationem magni cum enim atque, inventore error aperiam excepturi porro
+    quibusdam placeat, cumque animi accusamus autem omnis quaerat! Magni id explicabo veniam omnis, eum facere quod
+    consectetur ea quasi delectus molestias autem quis, sunt est molestiae unde voluptates odit accusamus velit, rem
+    eveniet sit enim. Consequatur quaerat corporis iure dignissimos sapiente libero ut hic delectus, qui cumque
+    perspiciatis, rerum iste vel sed voluptatum suscipit quae porro aspernatur similique explicabo dicta. Quisquam,
+    doloribus saepe. Ducimus, nemo quae! Fuga cum vero esse eius amet iure delectus omnis repellat aut? Amet adipisci
+    omnis mollitia nulla, praesentium impedit quas doloremque possimus dignissimos tenetur eaque!
+  </div>
+
+  <script>
+    const scrollLine = document.querySelector('.scroll-line');
+
+    function scrollCalculate(){
+      const windowHeight = window.innerHeight;
+      const fullHeight = document.body.clientHeight;
+      const scrollY = window.scrollY;
+
+      const percent = (scrollY / (fullHeight - windowHeight)) * 100;
+      
+      scrollLine.style.width = `${percent}%`;
+    }
+
+    window.addEventListener('scroll', scrollCalculate)
+
+  </script>
+</body>
+
+</html>
