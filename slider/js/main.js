@@ -1,6 +1,8 @@
 const sliderItems = document.querySelectorAll('.slider__item');
 const sliderPrevBtn = document.querySelector('.prev-btn');
 const sliderNextBtn = document.querySelector('.next-btn');
+const body = document.querySelector('body');
+
 
 
 let sliderIndex = 0;
@@ -13,6 +15,11 @@ function activeSLide(sliderIndex) {
   });
 
   sliderItems[sliderIndex].classList.add('slider__item--active');
+
+  let sliderActiveImgUrl = sliderItems[sliderIndex].querySelector('img').src;
+
+  body.style.backgroundImage = `url(${sliderActiveImgUrl})`;
+  
 }
 
 
