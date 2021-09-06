@@ -9,3 +9,4 @@
 7: FlexPanel https://azizshik.github.io/JSProjects/FlexPanel/ <br>
 8: progress https://azizshik.github.io/JSProjects/progress/ <br>
 9: StopWatch https://azizshik.github.io/JSProjects/StopWatch/ <br>
+10: slider https://azizshik.github.io/JSProjects/slider/ <br>
