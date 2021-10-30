@@ -5,11 +5,53 @@
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="shortcut icon" href="img/logo.png" type="image/x-png">
   <link rel="stylesheet" href="css/style.css">
   <title>Movie App</title>
 </head>
 
 <body>
+
+  <header class="header">
+    <div class="container">
+      <div class="header__inner">
+        <h1 class="header__logo">
+          <img class="header__logo-img" src="img/logo.png" alt="Logo">
+          MovieApp
+        </h1>
+        <form action="#" class="header__search">
+          <input type="text" class="header__search-input" placeholder="Search" id="header-input">
+          <label for="header-input" class="header__search-label"></label>
+        </form>
+      </div>
+    </div>
+  </header>
+
+  <main class="main">
+    <div class="container">
+      <h2 class="main__title">Список Фильмов</h2>
+    </div>
+    <section class="movies">
+      <div class="container">
+        <div class="movies__inner">
+          <div class="movie">
+            <div class="movie__img-block">
+              <img src="https://kinopoiskapiunofficial.tech/images/posters/kp/301.jpg" alt="Movie-Poster"
+                class="movie__img">
+            </div>
+            <div class="movie__info">
+              <h3 class="movie__title">Title</h3>
+              <p class="movie__category">Category</p>
+              <span class="movie__country">Country</span>
+              <p class="movie__descr">Description</p>
+              <span class="movie__rating movie--green">7.5</span>
+              <span class="movie__age movie--green">16+</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
 
 
   <script src="js/app.js"></script>
