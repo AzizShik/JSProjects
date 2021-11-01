@@ -11,3 +11,4 @@
 9: StopWatch https://azizshik.github.io/JSProjects/StopWatch/ <br>
 10: slider https://azizshik.github.io/JSProjects/slider/ <br>
 11: slider https://azizshik.github.io/JSProjects/movieApp/ <br>
+12: tabs https://azizshik.github.io/JSProjects/tabs/ <br>
