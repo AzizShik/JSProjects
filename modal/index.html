@@ -11,20 +11,21 @@
 
 <body>
 
-  <button class="btn">Open modal</button>
+  <button class="btn modal-open" data-modal="modal-1">Open modal</button>
 
-  <div class="modal">
+  <div class="modal" id="modal-1">
     <div class="modal__body">
       <div class="modal__content">
-        <button class="modal__close">&times;</button>
+        <button class="modal__close modal-close">&times;</button>
         <div class="modal__img">
           <img
             src="https://images.unsplash.com/photo-1564349683136-77e08dba1ef7?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1472&q=80"
-            alt="Cute cat">
+            alt="Panda">
         </div>
         <div class="modal__info">
           <h1 class="modal__title">Modal Title</h1>
           <p class="modal__descr"><span>Modal Description</span> Lorem ipsum dolor, sit amet consectetur adipisicing elit. Quasi, expedita nihil officiis deserunt voluptates porro, fuga modi dolores quo ratione doloribus iste accusantium autem dolore repudiandae veniam soluta ea vel placeat aspernatur non explicabo, dolorum aperiam? Id quibusdam iste officia molestiae porro! Consequuntur non rem inventore maxime harum laborum praesentium animi ullam pariatur accusamus explicabo quas nostrum natus, quae porro enim quis necessitatibus in numquam reprehenderit saepe soluta. Rem ratione, velit sunt veritatis quas minus eos expedita ipsa voluptatibus, hic possimus rerum iusto commodi ullam optio nihil, reprehenderit id dolorum. Odit, architecto vitae laudantium accusantium at sapiente velit soluta quos.</p>
+          <button class="modal__close-btn modal-close">Modal-close</button>
         </div>
       </div>
     </div>
